@@ -1,0 +1,97 @@
+*{
+  font-family: $iran-sans;
+}
+.publisher-filed{
+  width: 300px !important;
+}
+
+///////////USER PROFILE////////////////
+.modal-button{
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .65rem 1rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  background-color: #34bfa3;
+  border-color: #34bfa3;
+  color: #fff !important;
+  font-family: $iran-sans;
+  margin: 0 30% !important;
+}
+.card-title-custom{
+  text-align: right;
+  font-family: $iran-sans;
+}
+.close-button{
+  font-family: $iran-sans;
+}
+.save-button{
+  font-family: $iran-sans;
+}
+
+/////////////////NAVBAR CUSTOM////////////////////
+.input-custom{
+  text-align: right !important;
+  direction: rtl !important;
+  font-family: $iran-sans !important;
+}
+.input-custom::placeholder{
+  text-align: right !important;
+  direction: rtl !important;
+  font-family: $iran-sans !important;
+  font-size: 12px !important;
+}
+.navbar-form-custom{
+  float: right !important;
+}
+.lessons-table-custom{
+  margin-top: 25px;
+  background: #eeeeeeee !important;
+  text-align: center;
+}
+.mat-header-cell-custom{
+  font-size: 10px !important;
+  text-align: center;
+  font-weight: bold;
+}
+.mat-row-custom{
+  cursor: pointer;
+  &:hover{
+    background: $red-500;
+    .cell-hover{
+      color: $white-color;
+    }
+  }
+}
+.Customer{
+  background-color: #b1b0b0 !important;
+}
+.mat-paginator-container{
+  background: #eeeeeeee !important;
+}
+///////////////POSITION PUBLISHER////////////////////
+.edit-box{
+  margin: 0 22%;
+}
+.edit-button-custom{
+  padding: 8px 15px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  background: $teal-a700 !important;
+}
+.edit-field-box{
+  position: absolute;
+  right: 20%;
+  z-index: 1000;
+  background: #fff;
+
+}
+
+

@@ -1,0 +1,45 @@
+*{
+  font-family:  $iran-sans;
+}
+.sidebar-custom {
+  .nav{
+    span{
+      display: inline-block !important;
+      font-size: 12px !important;
+      color: $white-color;
+      //margin: 5px 20px;
+
+    }
+    i{
+      float: right;
+    }
+  }
+}
+.logo {
+  .publisher-sidebar-title{
+    color: $white-color;
+    font-family: $iran-sans;
+    margin: 10% 25%;
+    font-size: 30px;
+  }
+}
+.nav-item-custom-parent{
+  a{
+    text-align: right !important;
+    .first-child{
+      margin: 5px 20px !important;
+      font-size: 14px !important;
+    }
+  }
+}
+.change-width-main-panel{
+  width: calc(100% - 70px);
+  z-index: 1000000;
+  background: #eeeeeeee;
+}
+.chaneg-width-sidebar{
+  width: 70px !important;
+}
+.float{
+  float: left !important;
+}

@@ -1,0 +1,340 @@
+<div class="sidebar-wrapper">
+  <div *ngIf="isMobileMenu()">
+    <form class="navbar-form">
+      <span class="bmd-form-group">
+        <div class="input-group no-border">
+          <input type="text" value="" class="form-control" placeholder="Search...">
+          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
+        </div>
+      </span>
+    </form>
+    <ul class="nav navbar-nav nav-mobile-menu">
+        <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+                <i class="material-icons">dashboard</i>
+                <p>
+                    <span class="d-lg-none d-md-block">Stats</span>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons icon-width">notifications</i>
+                <span class="notification">5</span>
+                <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                </p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item">Mike John responded to your email</a>
+                <a class="dropdown-item">You have 5 new tasks</a>
+                <a class="dropdown-item">You're now friend with Andrew</a>
+                <a class="dropdown-item">Another Notification</a>
+                <a class="dropdown-item">Another One</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+                <i class="material-icons icon-width">person</i>
+                <p>
+                    <span class="d-lg-none d-md-block">Account</span>
+                </p>
+            </a>
+        </li>
+    </ul>
+  </div>
+    <ul class="nav">
+        <li routerLinkActive="active"  class="nav-item  nav-item-custom-parent">
+            <a class="nav-link" [routerLink]="['/dashboard']">
+                <i class="material-icons icon-width">dashboard</i>
+                <span class="first-child">
+                   {{locale['key_dashboard']}}
+                </span>
+            </a>
+        </li>
+        <li class="has-child-ul nav-item-custom-parent">
+            <a class="nav-link">
+                <i class="material-icons icon-width">group</i>
+                <span class="first-child">
+                    {{locale['key_manage']}}
+                </span>
+            </a>
+            <ul class="menu-parent-ul">
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/manage/addcargo']">
+                        <span>جمع آوری بار</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['manage/distributioncargo']">
+                        <span>توزیع بار</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['manage/store']">
+                        <span>مدیریت انبار</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!--<li class="has-child-ul nav-item-custom-parent">-->
+            <!--<a class="nav-link">-->
+                <!--<i class="material-icons icon-width">card_travel</i>-->
+                <!--<span class="first-child">-->
+                    <!--{{locale.key_request}}-->
+                <!--</span>-->
+            <!--</a>-->
+            <!--<ul class="menu-parent-ul">-->
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                    <!--<a class="nav-link" [routerLink]="['/request/addcargo']">-->
+                        <!--<span>{{locale.add_cargo}}</span>-->
+                        <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                    <!--<a class="nav-link" [routerLink]="['request/distributioncargo']">-->
+                        <!--<span>{{locale.distribution_cargo}}</span>-->
+                        <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                    <!--<a class="nav-link" [routerLink]="['request/store']">-->
+                        <!--<span>{{locale.manage_store}}</span>-->
+                        <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</li>-->
+        <li routerLinkActive="active"  class="nav-item nav-item-custom-parent">
+            <a class="nav-link" [routerLink]="['/paths']">
+                <i class="material-icons icon-width">call_merge</i>
+                <span class="first-child">
+                  {{locale['key_paths']}}
+                </span>
+            </a>
+        </li>
+        <li class="has-child-ul nav-item-custom-parent">
+            <a class="nav-link">
+                <i class="material-icons icon-width">person</i>
+                <span class="first-child">
+                  {{locale['key_orders']}}
+                </span>
+            </a>
+            <ul class="menu-parent-ul">
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/orders']">
+                        <span> {{locale['key_orders']}}</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/refrenceorders']">
+                        <span>{{locale['key_reference_orders']}}</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="has-child-ul nav-item-custom-parent">
+            <a class="nav-link">
+                <i class="material-icons icon-width">directions_car</i>
+                <span class="first-child">
+                  {{locale['key_drivers']}}
+                </span>
+            </a>
+            <ul class="menu-parent-ul">
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['drivers/lists']">
+                        <span>{{locale['drivers_list']}}</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['drivers/register']">
+                        <span>{{locale['register_drivers']}}</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                    <!--<a class="nav-link" [routerLink]="['drivers/maps']">-->
+                        <!--<span>{{locale.maps_drivers}}</span>-->
+                        <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['drivers/change']">
+                        <span>{{locale['change_drivers']}}</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>-->
+            </ul>
+        </li>
+
+        <li class="has-child-ul nav-item-custom-parent">
+            <a class="nav-link">
+                <i class="material-icons icon-width">shopping_basket</i>
+                <span class="first-child">
+                   {{locale['key_customers']}}
+                </span>
+            </a>
+            <ul class="menu-parent-ul">
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['customers/list']">
+                        <span>{{locale['key_customers_list']}}</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['customers/register']">
+                        <span>{{locale['key_customers_register']}}</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                    <!--<a class="nav-link" [routerLink]="['customers/profile']">-->
+                        <!--<span>{{locale.key_customers_profile}}</span>-->
+                        <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                    <!--</a>-->
+                <!--</li>-->
+            </ul>
+        </li>
+        <li class="has-child-ul nav-item-custom-parent">
+                <a class="nav-link">
+                    <i class="material-icons icon-width">shopping_basket</i>
+                    <span class="first-child">
+                         مشتریان تی تک
+                    </span>
+                </a>
+                <ul class="menu-parent-ul">
+                    <li class="nav-item nav-item-custom" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['tiTech']">
+                            <span>{{locale['key_customers_list']}}</span>
+                            <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                        </a>
+                    </li>
+                    <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                        <!--<a class="nav-link" [routerLink]="['customers/profile']">-->
+                            <!--<span>{{locale.key_customers_profile}}</span>-->
+                            <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                </ul>
+            </li>
+        <li routerLinkActive="active"  class="nav-item nav-item-custom-parent">
+            <a class="nav-link" [routerLink]="['contract']">
+                <i class="material-icons icon-width">content_paste</i>
+                <span class="first-child">
+                  {{locale['key_contract']}}
+                </span>
+            </a>
+        </li>
+        <!--<li class="has-child-ul nav-item-custom-parent">-->
+            <!--<a class="nav-link">-->
+                <!--<i class="material-icons icon-width">settings</i>-->
+                <!--<span class="first-child">-->
+                  <!--{{locale?.key_setting}}-->
+                <!--</span>-->
+            <!--</a>-->
+            <!--<ul class="menu-parent-ul">-->
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                    <!--<a class="nav-link" [routerLink]="['setting/determinefeet']">-->
+                        <!--<span>{{locale.key_setting_determine_fleet}}</span>-->
+                        <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                    <!--<a class="nav-link" [routerLink]="['setting/statususer']">-->
+                        <!--<span>{{locale.key_setting_status_users}}</span>-->
+                        <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                    <!--<a class="nav-link" [routerLink]="['setting/vehicles']">-->
+                        <!--<span>{{locale.key_setting_vehicles}}</span>-->
+                        <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                    <!--</a>-->
+                <!--</li>-->
+
+            <!--</ul>-->
+        <!--</li>-->
+
+        <li class="has-child-ul nav-item-custom-parent">
+            <a class="nav-link">
+                <i class="material-icons icon-width">contacts</i>
+                <span class="first-child">
+                  تیپاکس
+                </span>
+            </a>
+            <ul class="menu-parent-ul">
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/tipaxorders']">
+                        <span>سفارشات تیپاکس</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/tipaxorder/management']">
+                        <span>مدیریت تیپاکس</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/tipaxorder/balance']">
+                        <span>تیپاکس موقت</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="has-child-ul nav-item-custom-parent">
+            <a class="nav-link">
+                <i class="material-icons icon-width">local_taxi</i>
+                <span class="first-child">
+                  رانندگان تیپاکس
+                </span>
+            </a>
+            <ul class="menu-parent-ul">
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['tipaxdriver/lists']">
+                        <span>لیست رانندگان تیپاکس</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['tipaxdriver/register']">
+                        <span>ثبت نام رانندگان تیپاکس</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">-->
+                <!--<a class="nav-link" [routerLink]="['drivers/maps']">-->
+                <!--<span>{{locale.maps_drivers}}</span>-->
+                <!--<span>  <i class="material-icons icon-width">fiber_manual_record</i></span>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item nav-item-custom" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['drivers/change']">
+                        <span>{{locale['change_drivers']}}</span>
+                        <span>  <i class="material-icons icon-width">fiber_manual_record</i></span>
+                    </a>
+                </li>-->
+            </ul>
+        </li>
+        <li routerLinkActive="active"  class="nav-item nav-item-custom-parent">
+            <a class="nav-link" (click)="onLogOut()">
+                <i class="material-icons icon-width">exit_to_app</i>
+                <span class="first-child">
+                  خروج
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>

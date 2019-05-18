@@ -1,0 +1,175 @@
+.horizontal-scroll{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: auto;
+  white-space:nowrap;
+  direction: rtl;
+}
+#order-list::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: $white;
+  direction: rtl;
+}
+
+#order-list::-webkit-scrollbar
+{
+  width: 15px;
+  background-color: $white;
+}
+
+#order-list::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  padding: 50px;
+
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: $gray-default;
+  height: 100px;
+  margin-right: 40px;
+}
+//::-webkit-scrollbar-button:single-button {
+//  background-color: #bbbbbb;
+//  display: block;
+//  height: 13px;
+//  width: 16px;
+//  border-radius: 100%;
+//  position: absolute;
+//  cursor: pointer;
+//}
+//::-webkit-scrollbar-button:single-button:vertical:decrement {
+//  border-width: 0 8px 8px 8px;
+//  border-color: transparent transparent #555555 transparent;
+//}
+
+//::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+//  border-color: transparent transparent #777777 transparent;
+//}
+///* Down */
+//::-webkit-scrollbar-button:single-button:vertical:increment {
+//  border-width: 8px 8px 0 8px;
+//  border-color: #555555 transparent transparent transparent;
+//}
+//
+//::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+//  border-color: #777777 transparent transparent transparent;
+//}
+.card-ref-order{
+  margin: 2% 0;
+  .card-option{
+    width: 100%;
+    display: block;
+    background: $white;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px $white, 0 1px 2px;
+    .card-option-child{
+      margin: 0 1%;
+      .download-ref-order{
+        color:$sinigo-default !important;
+      }
+      .edit-order{
+        cursor: pointer;
+        background-color: $white;
+        margin: 0 0 0 5%;
+        .last-img{
+          width: 50px;
+        }
+        i{
+          font-size: 50px;
+          margin: 7%
+        }
+        h5{
+          font-size: 12px;
+          font-family: $iran-sans;
+          color: $sinigo-default;
+          margin: 10px 0;
+        }
+
+      }
+
+      .edit-order:nth-child(1) {
+        //float: right;
+      }
+      .edit-order:hover{
+        i{
+          color: $red-500;
+        }
+        h5{
+          color: $red-500;
+        }
+      }
+    }
+
+  }
+}
+
+
+.order-detail-title{
+  text-align: right;
+  font-family: $iran-sans;
+  color: $red-500;
+  font-size: 20px;
+  margin: 2% 2%;
+}
+////////////unit_margin///////
+.unit_margin{
+  margin-top: -4.7% !important;
+}
+///////////////add order///////
+.add-button{
+  cursor: pointer;
+  img{
+    width: 50px;
+    margin: auto 45%;
+  }
+  h3{
+    font-family: $iran-sans;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+///////////////////MEDIAS////////////
+.medias-box{
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 2px;
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  font-weight: 400;
+  padding-bottom: 1px;
+  position: relative;
+  height: 300px;
+  img{
+    width: 100%;
+    height: 50%;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 2px;
+  }
+  .caption-panel-content{
+    margin-bottom: 20px;
+    padding: 16.992px 24px;
+    min-height: 70px;
+    h5{
+      direction: rtl;
+      display: block;
+      font-size: 18px;
+      text-align: right;
+      span:nth-child(1){
+        color: $red-500;
+      }
+    }
+    .download-media{
+      .edit-order{
+        i{
+          //color:$sinigo-default !important;
+          font-size: 30px;
+          color: $red-500;
+        }
+      }
+    }
+  }
+}
