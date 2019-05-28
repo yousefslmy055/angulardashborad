@@ -27,9 +27,25 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/material-design-icons/iconfont/material-icons.css",
+              "node_modules/select2/dist/css/select2.css",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css",
+              "node_modules/persian-datepicker/dist/css/persian-datepicker.css",
+              "src/assets/scss/material-dashboard.scss",
+              "src/assets/css/demo.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/select2/dist/js/select2.js",
+              "node_modules/persian-datepicker/dist/js/persian-datepicker.js",
+              "node_modules/persian-date/dist/persian-date.js",
+              "node_modules/select2/dist/js/select2.full.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -83,7 +99,13 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/material-design-icons/iconfont/material-icons.css",
+              "node_modules/select2/dist/css/select2.css",
+              "node_modules/persian-datepicker/dist/css/persian-datepicker.css",
+              "src/assets/scss/material-dashboard.scss",
+              "src/assets/css/demo.css"
             ],
             "scripts": [],
             "assets": [

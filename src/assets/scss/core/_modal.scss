@@ -1,0 +1,105 @@
+.modal-dialog {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 30% !important;
+  height: 250px;
+  .modal-content{
+    height: 250px;
+    border: none;
+    border-radius: $border-raduis-co !important;
+    @include shadow-ys();
+    background-color: $white;
+    .modal-header{
+      border-bottom: none;
+      h4{
+        font-size: 25px;
+        margin: 6% 8%;
+        display: block;
+        width: 100%;
+        font-family: $iran-sans;
+        direction: rtl;
+      }
+      h5{
+        position: absolute;
+        top: 54%;
+        left: 28%;
+        font-size: 22px;
+        font-family: $iran-sans;
+      }
+      .btn-succsess{
+        position: absolute;
+        top: 70%;
+        left: 34%;
+      }
+      .circle-ok{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: $red-500;
+        margin: 0 40%;
+      }
+    }
+    .modal-body-contract{
+      display: block !important;
+    }
+    .modal-footer-process{
+      margin: 7% 35% !important;
+    }
+    .modal-footer{
+      border:none;
+      margin: -5% 17%;
+      .btn-cancel{
+        background-color: $sinigo-default !important;
+      }
+      .btn-close{
+
+      }
+    }
+  }
+}
+.modal-lg{
+  width: 100% !important;
+  max-width: 1200px;
+  height: 600px;
+  max-height: 600px;
+  position: absolute;
+  left: 10% !important;
+  top: 15% !important;
+  .modal-content{
+    height: 600px !important;
+  }
+}
+.modal-sm{
+  .modal-content{
+    width: 600px;
+    height: 250px;
+    .modal-footer{
+      margin: -5% 31%;
+    }
+  }
+}
+////////////////////edit modal//////////////
+.edit-modal{
+  width: 100%;
+  height: auto;
+  .circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    @include shadow-ys();
+    margin: 1% auto;
+    img{
+      width: 80px;
+      height: 80px;
+      margin: 5%;
+    }
+  }
+
+  h2{
+    font-size: 18px;
+    font-family: $iran-sans;
+    text-align: center;
+    margin: 2% 0;
+  }
+}

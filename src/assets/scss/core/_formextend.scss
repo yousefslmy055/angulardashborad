@@ -1,0 +1,30 @@
+.form-header{
+  padding: 1.25rem;
+  border-top-left-radius: .375rem;
+  border-top-right-radius: .375rem;
+  color: #2a2a2a;
+  font-family: Exo;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ebeef2;
+  text-align: right;
+  font-family: $iran-sans;
+}
+.form-body{
+  -webkit-box-flex: 1;
+  flex: 1;
+  -ms-flex: 1 1 auto;
+  overflow: auto;
+  padding: 1.25rem;
+  position: relative;
+}
+.form-input{
+  padding: .75rem 1.125rem;
+  color: #2a2a2a;
+  background-color: #fff;
+  border: 2px solid #dadfe6;
+  font-family: $iran-sans;
+  border-radius: .375rem;
+  text-align: right;
+  width: 100%;
+}

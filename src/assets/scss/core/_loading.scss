@@ -1,0 +1,228 @@
+/* Progress Bar */
+.progress {
+  position: relative;
+  height: 4px;
+  display: block;
+  width: 100%;
+  background-color: #27ab19 !important;
+  border-radius: 2px;
+  background-clip: padding-box;
+  overflow: hidden;
+  margin-bottom: 0px;
+  position: fixed;
+  z-index: 100000000000;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.progress .determinate {
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  bottom: 0;
+  background-color: $red-500;
+  transition: width .3s linear; }
+.progress .indeterminate {
+  background-color: $red-500; }
+.progress .indeterminate:before {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate 2.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  animation: indeterminate 2.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
+.progress .indeterminate:after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate-short 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  animation: indeterminate-short 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  -webkit-animation-delay: 1.15s;
+  animation-delay: 1.15s; }
+
+@-webkit-keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%; }
+  60% {
+    left: 100%;
+    right: -90%; }
+  100% {
+    left: 100%;
+    right: -90%; } }
+@keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%; }
+  60% {
+    left: 100%;
+    right: -90%; }
+  100% {
+    left: 100%;
+    right: -90%; } }
+@-webkit-keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%; }
+  60% {
+    left: 107%;
+    right: -8%; }
+  100% {
+    left: 107%;
+    right: -8%; } }
+@keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%; }
+  60% {
+    left: 107%;
+    right: -8%; }
+  100% {
+    left: 107%;
+    right: -8%; } }
+
+.progress-display{
+  display: none;
+}
+//////////////////////////
+.loader {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  width: 175px;
+  height: 80px;
+}
+.loader span {
+  display: block;
+  background: $red-500;
+  width: 7px;
+  height: 5%;
+  opacity: .6;
+  border-radius: 14px;
+  margin-right: 5px;
+  float: left;
+  margin-top: 25%;
+}
+.loader span:last-child {
+  margin-right: 0px;
+}
+.loader span:nth-child(1) {
+  animation: load .5s .5s infinite linear;
+}
+.loader span:nth-child(2) {
+  animation: load .5s .45s infinite linear;
+}
+.loader span:nth-child(3) {
+  animation: load .5s .40s infinite linear;
+}
+.loader span:nth-child(4) {
+  animation: load .5s 0.35s infinite linear;
+}
+.loader span:nth-child(5) {
+  animation: load .5s 0.30s infinite linear;
+}
+.loader span:nth-child(6) {
+  animation: load .5s 0.25s infinite linear;
+}
+.loader span:nth-child(7) {
+  animation: load .5s 0.2s infinite linear;
+}
+.loader span:nth-child(8) {
+  animation: load .5s 0s infinite linear;
+}
+
+
+@keyframes load {
+  0% {
+    background: $red-500;
+    margin-top: 25%;
+    height: 5%;
+  }
+  50% {
+    background: $red-500;
+    height: 100%;
+    margin-top: 0%;
+  }
+  100% {
+    background: $red-500;
+    height: 5%;
+    margin-top: 25%;
+  }
+}
+.progress-bar{
+  position: fixed;
+  top: 14%;
+  right: 12%;
+}
+//////////////////loading download//////////
+
+.container-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background-color: $red-500;
+  border-radius: 50%;
+  float: left;
+  margin-right: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+}
+
+.dot-1{
+  animation: loop1 1s;
+  animation-iteration-count:infinite;
+}
+
+.dot-2 {
+  animation: loop2 1s;
+  animation-delay: .2s;
+  animation-iteration-count:infinite;
+}
+
+.dot-3 {
+  animation: loop3 1s;
+  animation-delay: .4s;
+  animation-iteration-count:infinite;
+}
+
+@keyframes loop1 {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);
+    background-color: $red-500;
+    width: 30px;
+    border-radius:50px;}
+  100% {transform: scale(1);}
+}
+
+@keyframes loop2 {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);
+    background-color: $red-500;
+    width: 30px;
+    border-radius:50px;}
+  100% {transform: scale(1);}
+}
+
+@keyframes loop3 {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);
+    background-color: $red-500;
+    width: 30px;
+    border-radius:50px;}
+  100% {transform: scale(1);}
+}

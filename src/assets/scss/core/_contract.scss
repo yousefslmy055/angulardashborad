@@ -1,0 +1,132 @@
+.circle-add-contract{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $red-500;
+  position: absolute;
+  left: 1%;
+  top: 15px;
+  cursor: pointer;
+  z-index: 10000;
+  i{
+    font-size: 45px;
+    color: $white;
+    margin: 5%;
+  }
+}
+
+.circle-add-contract_rule{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $sinigo-default;
+  cursor: pointer;
+  z-index: 10000;
+  i{
+    font-size: 35px;
+    color: $white;
+    margin: -7%;
+  }
+}
+/////////////////////////////create contract/////////////
+.list-corporate{
+  width: 95%;
+  background-color: $white;
+  z-index: 100;
+  position: absolute;
+  max-height: 150px;
+  overflow-y: scroll;
+  border-radius: $border-raduis-co !important;
+  @include shadow-ys();
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      font-family:  $iran-sans;
+      font-size: 14px;
+      border-bottom: 1px solid $gray-default;
+    }
+
+    li:last-child {
+      border: none;
+    }
+
+    li a {
+      text-decoration: none;
+      color: $black;
+      display: block;
+
+      -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+      -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+      -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+      -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+      transition: font-size 0.3s ease, background-color 0.3s ease;
+      text-align: center;
+      line-height: 41px;
+    }
+
+    li a:hover {
+      font-size: 18px;
+      background: #f6f6f6;
+      color: $red-500 !important;
+      cursor: pointer;
+    }
+  }
+}
+#list-corporate::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: $white;
+}
+
+#list-corporate::-webkit-scrollbar
+{
+  width: 7px;
+  background-color: $white;
+}
+
+#list-corporate::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  padding: 50px;
+
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: $gray-default;
+  height: 100px;
+  margin-right: 40px;
+}
+.title-add-rule{
+  h3{
+    text-align: right;
+    font-family: $iran-sans;
+    color: $red-500;
+    margin: 2% 2%;
+  }
+}
+.check-all{
+  height: 19px;
+  text-align: right;
+  margin: 0 25%;
+  font-size: 10px;
+  h3{
+    font-size: 18px;
+    float: right;
+    font-family: $iran-sans;
+  }
+}
+.selected-all-ckeck{
+  float: right;
+  margin: -4% 26%;
+}
+.selected-first-mile{
+  float: right;
+  margin: 1% -22%;
+}
+.label-check-all{
+  text-align: right;
+  font-size: 12px;
+  direction: rtl;
+  color: rgba(0, 0, 0, 0.51);
+}

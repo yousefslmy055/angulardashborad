@@ -1,0 +1,42 @@
+.dashboard-title{
+  h3{
+    text-align: right;
+    font-family: $iran-sans;
+    color: $red-500;
+    margin: 0 3%;
+  }
+}
+.dashboard1-title{
+  text-align: right;
+  margin: 1% 1%;
+  color: $red-500;
+  font-family: $iran-sans;
+  font-size: 16px;
+}
+.map-dashboard{
+  height: 400px;
+}
+.Routedriver{
+  opacity: 1;
+  content: '\u25BA';
+}
+
+.tooltip-marker{
+  background-color: #eeeeee!important;
+  color: #0d1d44;
+  opacity: 1;
+}
+.arrow-icon{
+  background-color: transparent;
+
+  position: absolute;
+  color: #0d1d44;
+  top: -17px;
+  //right: -100px;
+  div{
+    font-size: 45px !important;
+  }
+  img{
+    width: 30px;
+  }
+}

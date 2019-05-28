@@ -1,21 +1,146 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="wrapper" >
+  <div class="sidebar sidebar-custom" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <app-sidebar></app-sidebar>
+    <div class="sidebar-background">
+      <!--style="background-image: url(../assets/img/sidebar-4.jpg)">-->
 
-<router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="main-panel" >
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+    <div *ngIf="isMaps('maps')">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <div class="mat-elevation-z8" #TABLE>
+    <mat-table class="lessons-table mat-elevation-z8 lessons-table-custom" [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="کدمسیر">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>کد مسیر</mat-header-cell>
+        <mat-header-cell  *matCellDef="let route_list"    class="cell-hover">
+
+          <a class="nav-link nav-link-path" [routerLink]="[ route_list.id]">
+            {{route_list.code}}
+          </a>
+
+        </mat-header-cell>
+      </ng-container>
+      <ng-container matColumnDef="نام راننده">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>نام راننده</mat-header-cell>
+        <mat-header-cell  *matCellDef="let route_list"  [routerLink]="[ route_list.id]"   class="cell-hover">
+                                            <span *ngIf="route_list['drivers'][0]">
+                                                       <a class="nav-link nav-link-path" [routerLink]="[ route_list.id]">
+                                                        {{route_list['drivers'][0]['user']['first_name']}} {{route_list['drivers'][0]['user']['last_name']}}
+                                                        </a>
+                                            </span>
+        </mat-header-cell>
+      </ng-container>
+      <ng-container matColumnDef="شماره همراه راننده">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>شماره همراه راننده</mat-header-cell>
+        <mat-header-cell  *matCellDef="let route_list"  [routerLink]="[ route_list.id]"   class="cell-hover">
+                                            <span *ngIf="route_list['drivers'][0]">
+                                                   <a class="nav-link nav-link-path" [routerLink]="[ route_list.id]">
+                                                        {{route_list['drivers'][0]['user']['mobile']}}
+                                                    </a>
+                                            </span>
+        </mat-header-cell>
+      </ng-container>
+      <ng-container matColumnDef="وضعیت مسیر">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>وضعیت مسیر</mat-header-cell>
+        <mat-header-cell  *matCellDef="let route_list"  [routerLink]="[ route_list.id]"   class="cell-hover">
+          <a class="nav-link nav-link-path" [routerLink]="[ route_list.id]">
+            {{route_list['fa_backoffie_status']}}
+          </a>
+        </mat-header-cell>
+      </ng-container>
+      <ng-container matColumnDef="نوع مسیر">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>نوع مسیر</mat-header-cell>
+        <mat-header-cell  *matCellDef="let route_list"  [routerLink]="[ route_list.id]"   class="cell-hover">
+          <a class="nav-link nav-link-path" [routerLink]="[ route_list.id]">
+            {{getTypeFaName(route_list['type'])}}
+          </a>
+        </mat-header-cell>
+      </ng-container>
+      <ng-container matColumnDef="ناحیه">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>ناحیه</mat-header-cell>
+        <mat-header-cell  *matCellDef="let route_list"  [routerLink]="[ route_list.id]" class="cell-hover">
+                                            <span *ngFor="let region of route_list['regions']">
+                                                <a class="nav-link nav-link-path" [routerLink]="[ route_list.id]">
+                                                     {{region['name']}}
+                                                </a>
+                                            </span>
+        </mat-header-cell>
+      </ng-container>
+      <ng-container matColumnDef="تعداد سفارشات">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>تعداد سفارشات</mat-header-cell>
+        <mat-header-cell  *matCellDef="let route_list"  [routerLink]="[ route_list.id]"   class="cell-hover">
+          <a class="nav-link nav-link-path" [routerLink]="[ route_list.id]">
+            {{route_list['orders_count']}}
+          </a>
+        </mat-header-cell>
+      </ng-container>
+      <ng-container matColumnDef="زمان ایجاد مسیر">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>زمان ایجاد مسیر</mat-header-cell>
+        <mat-header-cell *matCellDef="let route_list"  [routerLink]="[ route_list.id]"   class="mat-header-cell-custom cell-hover">
+          <a class="nav-link nav-link-path" [routerLink]="[ route_list.id]">
+            {{route_list.j_created_at}}
+          </a>
+        </mat-header-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="زمان شروع مسیر">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>زمان شروع مسیر</mat-header-cell>
+        <mat-header-cell *matCellDef="let route_list"  [routerLink]="[ route_list.id]"   class="mat-header-cell-custom cell-hover">
+          <a class="nav-link nav-link-path" [routerLink]="[ route_list.id]">
+            {{route_list.j_started_at}}
+          </a>
+        </mat-header-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="زمان پایان">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>زمان پایان</mat-header-cell>
+        <mat-header-cell *matCellDef="let route_list"  [routerLink]="[ route_list.id]"  class="mat-header-cell-custom cell-hover">
+          {{route_list.j_finished_at}}
+        </mat-header-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="زمان کل سفر">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>زمان کل سفر</mat-header-cell>
+        <mat-header-cell *matCellDef="let route_list"  [routerLink]="[route_list.id]"  class="mat-header-cell-custom cell-hover">
+          {{route_list.duration}}
+        </mat-header-cell>
+      </ng-container>
+      <ng-container matColumnDef="مبلغ کل COD">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>مبلغ کل COD</mat-header-cell>
+        <mat-header-cell *matCellDef="let route_list"  [routerLink]="[ route_list.id]"  class="mat-header-cell-custom cell-hover">
+          {{route_list.cash_on_delivery}}
+        </mat-header-cell>
+      </ng-container>
+      <ng-container matColumnDef="درصد تکمیل">
+        <mat-header-cell class="mat-header-cell-custom cell-hover" *matHeaderCellDef>درصد تکمیل</mat-header-cell>
+        <mat-header-cell *matCellDef="let route_list"  [routerLink]="[route_list.id]" class="mat-header-cell-custom cell-hover">
+
+          <ul class="skill-list">
+            <li class="skill">
+              <progress class="skill-2" max="100" value=" {{route_list.progress}}">
+                <strong>Skill Level:  {{route_list.progress}}%</strong>
+              </progress>
+              <span>{{route_list.progress}}%</span>
+            </li>
+          </ul>
+        </mat-header-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row class="mat-row-custom"    *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+    <div class="pageinate">
+      <button class="btn  btn-pageinate"  (click)=" onPaginateDown()">قبلی</button>
+      <button class="btn btn-pageinate" (click)=" clearPosParam()">پاکسازی</button>
+      <button class="btn btn-pageinate"  (click)="onPaginateUp()">بعدی</button>
+    </div>
+  </div>
+</div>
